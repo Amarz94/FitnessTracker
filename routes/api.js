@@ -1,10 +1,10 @@
 const router = require("express").Router();
-const Exercise = require("../models/exercise.js")
+const Exercise = require("../models/exercise")
 
 router.post('/api/exercise', (req, res) => {
     Exercise.create({})
-    .then((dbExercise) => {
-      res.json(dbExercise);
+    .then((dbWorkout) => {
+      res.json(dbWorkout);
     })
     .catch((err) => {
       res.json(err);
@@ -15,11 +15,11 @@ router.put('/api/exercise/:id', ({ body, params }, res) => {
     Exercise.findByIdAndUpdate(
     params.id,
     { $push: { exercises: body } },
-    // "runValidators" will ensure new exercises meet our schema requirements
+
     { new: true, runValidators: true }
   )
-    .then((dbExercise) => {
-      res.json(dbExercise);
+    .then((dbWorkout) => {
+      res.json(dbWorkout);
     })
     .catch((err) => {
       res.json(err);
@@ -36,8 +36,8 @@ router.get('/api/exercise', (req, res) => {
       },
     },
   ])
-    .then((dbExercises) => {
-      res.json(dbExercises);
+    .then((dbWorkouts) => {
+      res.json(dbWorkouts);
     })
     .catch((err) => {
       res.json(err);
@@ -56,9 +56,9 @@ router.get('/api/exercise/range', (req, res) => {
   ])
     .sort({ _id: -1 })
     .limit(7)
-    .then((dbExercises) => {
-      console.log(dbExercises);
-      res.json(dbExercises);
+    .then((dbWorkouts) => {
+      console.log(dbWorkouts);
+      res.json(dbWorkouts);
     })
     .catch((err) => {
       res.json(err);
