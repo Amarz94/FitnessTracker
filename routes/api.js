@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Exercise = require("../models/exercise")
 
-router.post('/api/exercise', (req, res) => {
+router.post('/api/exercises', (req, res) => {
     Exercise.create({})
     .then((dbWorkout) => {
       res.json(dbWorkout);
@@ -11,7 +11,7 @@ router.post('/api/exercise', (req, res) => {
     });
 });
 
-router.put('/api/exercise/:id', ({ body, params }, res) => {
+router.put('/api/exercises/:id', ({ body, params }, res) => {
     Exercise.findByIdAndUpdate(
     params.id,
     { $push: { exercises: body } },
@@ -26,7 +26,7 @@ router.put('/api/exercise/:id', ({ body, params }, res) => {
     });
 });
 
-router.get('/api/exercise', (req, res) => {
+router.get('/api/exercises', (req, res) => {
     Exercise.aggregate([
     {
       $addFields: {
@@ -44,7 +44,7 @@ router.get('/api/exercise', (req, res) => {
     });
 });
 
-router.get('/api/exercise/range', (req, res) => {
+router.get('/api/exercises/range', (req, res) => {
     Exercise.aggregate([
     {
       $addFields: {
@@ -65,8 +65,8 @@ router.get('/api/exercise/range', (req, res) => {
     });
 });
 
-router.delete('/api/exercise', ({ body }, res) => {
-    Exercise.findByIdAndDelete(body.id)
+router.delete('/api/exercises', ({ body }, res) => {
+  Exercise.findByIdAndDelete(body.id)
     .then(() => {
       res.json(true);
     })

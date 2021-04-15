@@ -6,7 +6,7 @@ const exerciseSchema = new Schema ({
         type: Date,
         default: () => new Date(),
     },
-    exercise: [
+    exercises: [
         {
             type: {
                 type:String,
@@ -23,25 +23,25 @@ const exerciseSchema = new Schema ({
                 trim:true,
                 required:"Enter weight(lbs)",
             },
+            duration: {
+                type: Number,
+                required: 'Enter duration in minutes',
+              },
             sets: {
                 type:Number,
-                trim:true,
-                required:"Enter number of sets",
+                
             },
             reps: {
                 type:Number,
-                trim:true,
-                required:"Enter number of sets",
+                
             },
             time: {
                 type:Number,
-                trim:true,
-                required:"Enter duration(minutes)",
+                
             },
             distance: {
                 type:Number,
-                trim:true,
-                required:"Enter distance(miles)",
+                
             },
             
             
