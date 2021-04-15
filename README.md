@@ -2,7 +2,7 @@
 
 ## Deployed Link
 
-[Fitness Tracker](https://mysterious-brushlands-78660.herokuapp.com/)
+[Fitness Tracker](https://frozen-shelf-54318.herokuapp.com/)
 
 ## Demo
 
