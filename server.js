@@ -12,7 +12,7 @@ app.use(logger("dev"));
 
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/cat',
+    process.env.MONGODB_URI || 'mongodb://localhost/fitness',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
