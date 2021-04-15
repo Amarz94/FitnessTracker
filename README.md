@@ -6,68 +6,29 @@
 
 ## Demo
 
-![Alt text](./public/images/fittrack.gif?raw=true "Preview")
+![](public/images/Demoimage.JPG)
 
 
 ## Installation
 
-#### Prerequisites
-* [NodeJS](https://nodejs.org)
-* [MongoDB](https://mongodb.com)
+#### Programs needed
+* NodeJS
+* MongoDB
+
+## Clone into system
 
 ```bash
-git clone https://github.com/skuttenkuler/Fitness-Tracker.git
-cd Fitness\ Tracker/
+git clone git@github.com:Amarz94/FitnessTracker.git
+cd FitnessTracker
 npm install
 npm start
 ```
 
-## Code Snippets
-Exercise Schema
-```javascript
-    const ExerciseSchema = new Schema({
-    type: String,
-    name: String,
-    distance: Number,
-    duration: Number,
-    weight: Number,
-    sets: Number,
-    reps: Number
-});
-```
-Workout Schema
-```javascript
-const WorkoutSchema = new Schema({
-    //day, default date.now
-    day: {
-        type: Date,
-        default: Date.now()
-    },
-    exercises: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Exercise"
-        }
-    ],
-    totalDuration: {
-        type: Number,
-        default: 0
-    } 
-});
-```
-Route to create a new workout
-
-```javascript
- //create new workout
-    app.post('/api/workouts', (req,res) => {
-        db.Workout.create({}).then(newWorkout => {
-            res.json(newWorkout);
-        });
-    });
-```
+## Useage
+When user loads the page, they are given the option to create a new workout if they havent already made one. They can add either cardio / resistance workouts with own data structures.
 
 
 # Authors
-- Sam Kuttenkuler
-    - [Github](https://www.github.com/skuttenkuler)
-    - [LinkedIn](https://www.linkedin.com/in/skdev91)
+- Alexander Marzullo
+    - [Github](https://www.github.com/Amarz94)
+    - [Email](marzullo94@gmail.com)
