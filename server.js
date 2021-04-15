@@ -12,14 +12,14 @@ app.use(logger("dev"));
 
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/exercise',
+    process.env.MONGODB_URI || 'mongodb://localhost/cat',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
       useFindAndModify: false
     }
-  ); dfdsf
+  );
 
 app.use(require("./routes/api"))
 app.use(require("./routes/html"))
