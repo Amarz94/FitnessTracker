@@ -10,8 +10,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(logger("dev"));
 
+
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts',
+    process.env.MONGODB_URI || 'mongodb://localhost/exercise',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
